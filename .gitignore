@@ -1,5 +1,7 @@
 bin/
 obj/
+output/
+ 
 core
 *.docx
 *.log
