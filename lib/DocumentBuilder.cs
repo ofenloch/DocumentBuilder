@@ -24,6 +24,11 @@
             return PackageTools.CreateNewSpreadsheetWorkbook(fileName);
         }
 
+        public static void UnpackPackage(string fileName, string targetDirectory = "")
+        {
+            PackageTools.UnpackPackage(fileName, targetDirectory);
+        }
+
     } // public class DocumentBuilder
 
 } // namespace dblib

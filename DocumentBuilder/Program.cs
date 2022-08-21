@@ -25,8 +25,14 @@ namespace DocumentBuilder
             string xmlDataFileName = Path.Combine(dataDir, "template.xml");
 
 
-            dblib.DocumentBuilder.CreateNewWordDocument("test.docx");
-            dblib.DocumentBuilder.CreateNewExcelDocument("test.xlsx");
+            string testDocx = Path.Combine(outDir, "test.docx");
+            string testXlsx = Path.Combine(outDir, "test.xlsx");
+
+            dblib.DocumentBuilder.CreateNewWordDocument(testDocx);
+            dblib.DocumentBuilder.CreateNewExcelDocument(testXlsx);
+
+            dblib.DocumentBuilder.UnpackPackage("test.docx", testDocx + "_unpacked");
+            dblib.DocumentBuilder.UnpackPackage("test.xlsx", testXlsx + "_unpacked");
 
             dblib.DocumentBuilder dbExcel = new dblib.DocumentBuilder(templateExcel, xmlDataFileName, Path.Combine(outDir, "example.xlsx"));
             dblib.DocumentBuilder dbWord = new dblib.DocumentBuilder(templateWord, xmlDataFileName, Path.Combine(outDir, "example.docx"));
