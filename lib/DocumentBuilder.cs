@@ -14,6 +14,16 @@
             Utilities.CreateDirectory(_outputDirectory);
         }
 
+        public static string CreateNewWordDocument(string fileName)
+        {
+            return PackageTools.CreateNewWordDocument(fileName);
+        }
+
+        public static string CreateNewExcelDocument(string fileName)
+        {
+            return PackageTools.CreateNewSpreadsheetWorkbook(fileName);
+        }
+
     } // public class DocumentBuilder
 
 } // namespace dblib
