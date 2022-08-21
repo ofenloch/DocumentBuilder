@@ -19,3 +19,11 @@ add project dblib to solution: `dotnet sln add lib/`
 edit file .vscode/tasks.json and use the solution file *DocumentBuilder.sln* for the build and publish tasks
 
 (see [my project "hello-world"](https://github.com/ofenloch/hello-world) for a detailed explanation)
+
+## References
+
+https://docs.microsoft.com/en-us/office/open-xml/packages-and-general
+
+https://docs.microsoft.com/en-us/office/open-xml/spreadsheets
+
+https://docs.microsoft.com/en-us/office/open-xml/word-processing
