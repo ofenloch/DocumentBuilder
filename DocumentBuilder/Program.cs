@@ -13,7 +13,7 @@ namespace DocumentBuilder
 
             string outDir = dblib.Utilities.CreateDirectory("./output/");
             Console.WriteLine("output directory is {0}", outDir);
-            
+
             string dataDir = dblib.Utilities.CreateDirectory("./data/");
             Console.WriteLine("data directory is {0}", dataDir);
 
@@ -24,6 +24,9 @@ namespace DocumentBuilder
 
             string xmlDataFileName = Path.Combine(dataDir, "template.xml");
 
+
+            dblib.DocumentBuilder.CreateNewWordDocument("test.docx");
+            dblib.DocumentBuilder.CreateNewExcelDocument("test.xlsx");
 
             dblib.DocumentBuilder dbExcel = new dblib.DocumentBuilder(templateExcel, xmlDataFileName, Path.Combine(outDir, "example.xlsx"));
             dblib.DocumentBuilder dbWord = new dblib.DocumentBuilder(templateWord, xmlDataFileName, Path.Combine(outDir, "example.docx"));
