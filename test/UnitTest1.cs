@@ -30,4 +30,19 @@ public class UnitTest1
         dblib.DocumentBuilder.CreateNewExcelDocument(testXlsx);
         Assert.True(File.Exists(testXlsx), $"file {testXlsx} should exist");
     }
+
+    [Fact]
+    public void test_Xlsx2Csv()
+    {
+        // the xml data file is ${workspaceFolder}/data/data.xml
+        // the corresponding xsd file is ${workspaceFolder}/data/data.xsd
+        // the template is ${workspaceFolder}/data/template-simple.xlsx
+
+        // the test is running in the working directory
+        string currentWorkingDirectory = Directory.GetCurrentDirectory();
+
+
+        // TODO: pass ${workspaceFolder} to this test so we can use the proper input files
+    }
+
 }
