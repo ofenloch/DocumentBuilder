@@ -73,6 +73,7 @@
             PackageTools.UnpackPackage(fileName, targetDirectory);
         }
 
+        public abstract int ProcessTemplate(string templateFileName, string xmlDataFileName, string outputFileName);
     } // public class DocumentBuilder
 
 } // namespace dblib

@@ -8,5 +8,11 @@ namespace dblib
             _documentType = XLSX;
 
         }
+
+        override public int ProcessTemplate(string templateFileName, string xmlDataFileName, string outputFileName)
+        {
+            
+        }
+
     } // class DocumentBuilderXlsx
 } // namespace dblib
