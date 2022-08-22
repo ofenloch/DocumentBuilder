@@ -1,7 +1,7 @@
 ﻿namespace dblib
 {
 
-    public class DocumentBuilder
+    public abstract class DocumentBuilder
     {
 
         protected string _outputDirectory = "";

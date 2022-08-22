@@ -1,6 +1,6 @@
 namespace dblib
 {
-    class DocumentBuilderDocx : DocumentBuilder
+    public class DocumentBuilderDocx : DocumentBuilder
     {
         public DocumentBuilderDocx(string templateFileName, string xmlDataFileName, string outputFileName) :
             base(templateFileName, xmlDataFileName, outputFileName)

@@ -34,8 +34,8 @@ namespace DocumentBuilder
             dblib.DocumentBuilder.UnpackPackage("test.docx", testDocx + "_unpacked");
             dblib.DocumentBuilder.UnpackPackage("test.xlsx", testXlsx + "_unpacked");
 
-            dblib.DocumentBuilder dbExcel = new dblib.DocumentBuilder(templateExcel, xmlDataFileName, Path.Combine(outDir, "example.xlsx"));
-            dblib.DocumentBuilder dbWord = new dblib.DocumentBuilder(templateWord, xmlDataFileName, Path.Combine(outDir, "example.docx"));
+            dblib.DocumentBuilderXlsx dbExcel = new dblib.DocumentBuilderXlsx(templateExcel, xmlDataFileName, Path.Combine(outDir, "example.xlsx"));
+            dblib.DocumentBuilderDocx dbWord = new dblib.DocumentBuilderDocx(templateWord, xmlDataFileName, Path.Combine(outDir, "example.docx"));
 
         }
     } // internal class Program

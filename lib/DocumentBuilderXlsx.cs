@@ -1,6 +1,6 @@
 namespace dblib
 {
-    class DocumentBuilderXlsx : DocumentBuilder
+    public class DocumentBuilderXlsx : DocumentBuilder
     {
         public DocumentBuilderXlsx(string templateFileName, string xmlDataFileName, string outputFileName) :
         base(templateFileName, xmlDataFileName, outputFileName)
