@@ -73,7 +73,11 @@
             PackageTools.UnpackPackage(fileName, targetDirectory);
         }
 
-        public abstract int ProcessTemplate(string templateFileName, string xmlDataFileName, string outputFileName);
+        public virtual int ProcessTemplate(string templateFileName, string xmlDataFileName, string outputFileName)
+        {
+            // 'DocumentBuilder.ProcessTemplate(string, string, string)' must declare a body because it is not marked abstract, extern, or partial
+            throw new InvalidOperationException("calling DocumentBuilder.ProcessTemplate(...) is not allowed");
+        }
     } // public class DocumentBuilder
 
 } // namespace dblib

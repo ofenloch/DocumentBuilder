@@ -4,14 +4,18 @@ namespace dblib
     {
         public DocumentBuilderDocx(string templateFileName, string xmlDataFileName, string outputFileName) :
             base(templateFileName, xmlDataFileName, outputFileName)
-        { 
+        {
             _documentType = DOCX;
 
         }
 
-        override public int ProcessTemplate(string templateFileName, string xmlDataFileName, string outputFileName)
+        public override int ProcessTemplate(string templateFileName, string xmlDataFileName, string outputFileName)
         {
-            
+            int error = 0;
+
+
+
+            return error;
         }
 
     } // class DocumentBuilderDocx
