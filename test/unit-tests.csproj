@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project DefaultTargets="Build;CopyFiles" Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -24,5 +24,10 @@
   <ItemGroup>
     <ProjectReference Include="..\lib\dblib.csproj" />
   </ItemGroup>
+
+  <!-- copy file ./data/NLog.config to $(OutDir)/NLog.config -->
+  <Target Name="CopyFiles">
+    <Copy SourceFiles="../data/NLog.config" DestinationFolder="$(OutDir)" />
+  </Target>
 
 </Project>
