@@ -4,6 +4,7 @@
     public abstract class DocumentBuilder
     {
 
+        protected static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         protected string _outputDirectory = "";
         protected string _outputFileName = "";
         protected string _outputFileBaseName = "";
@@ -56,6 +57,9 @@
             _outputFileBaseName = Path.GetFileNameWithoutExtension(_outputFileName);
             _outputDirectory = Path.GetDirectoryName(_outputFileName);
             Utilities.CreateDirectory(_outputDirectory);
+            Logger.Info("DocumentBuilder: templateFileName is {0}", templateFileName);
+            Logger.Info("DocumentBuilder: xmlDataFileName is {0}", xmlDataFileName);
+            Logger.Info("DocumentBuilder: outputFileName is {0}", outputFileName);
         }
 
         public static string CreateNewWordDocument(string fileName)
@@ -76,6 +80,7 @@
         public virtual int ProcessTemplate(string templateFileName, string xmlDataFileName, string outputFileName)
         {
             // 'DocumentBuilder.ProcessTemplate(string, string, string)' must declare a body because it is not marked abstract, extern, or partial
+            Logger.Error("DocumentBuilder: DocumentBuilder.ProcessTemplate should never ever be called!");
             throw new InvalidOperationException("calling DocumentBuilder.ProcessTemplate(...) is not allowed");
         }
     } // public class DocumentBuilder
