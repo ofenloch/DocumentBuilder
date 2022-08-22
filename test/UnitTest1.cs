@@ -11,7 +11,9 @@ public class UnitTest1
     [Fact]
     public void TestMethod()
     {
-        Assert.False(true, "Expected path " + Directory.GetCurrentDirectory());
+        string currentWorkingDirectory = Directory.GetCurrentDirectory();
+        Logger.Debug("UnitTest1.TestMethod: running in working directory {0}", currentWorkingDirectory);
+        Assert.False(true, $"Expected path {currentWorkingDirectory}");
     }
 
     [Fact]
