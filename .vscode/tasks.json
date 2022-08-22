@@ -14,6 +14,30 @@
             "problemMatcher": "$msCompile"
         },
         {
+            "label": "test",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "--output=${workspaceFolder}/output/unit-tests",
+                "--results-directory=${workspaceFolder}/output/unit-tests-results"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "test-should-work",
+            "command": "dotnet",
+            "type": "process",
+            "comment": "should work with --environment ... (it does from the command line)",
+            "args": [
+                "test",
+                "--environment LOGDIR=${workspaceFolder}",
+                "--output=${workspaceFolder}/output/unit-tests",
+                "--results-directory=${workspaceFolder}/output/unit-tests-results"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
             "label": "publish",
             "command": "dotnet",
             "type": "process",
