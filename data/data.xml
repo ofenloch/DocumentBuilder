@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document OutputFormat="MS Excel" destination="./output/" id="example1Excel" sourcepath="./">
+    <MasterBlock id="example1" template="templatel">
+
+        <Field id="projectnr" other-name="Projekt_Nummer" type="text">
+            <Value>VC-73-21-15385</Value>
+        </Field>
+        <Field id="A1" other-name="fA1" type="number">
+            <Value>3</Value>
+        </Field>
+        <Field id="B1" other-name="fB1" type="number">
+            <Value>4</Value>
+        </Field>
+        <Field id="C1" other-name="fC1" type="number">
+            <Value>5</Value>
+        </Field>
+        <Field id="A2" other-name="fA2" type="number">
+            <Value>1.234567890</Value>
+        </Field>
+        <Field id="B2" other-name="fB2" type="number">
+            <Value>2.345678901</Value>
+        </Field>
+        <Field id="C2" other-name="fC2" type="number">
+            <Value>3.456789012</Value>
+        </Field>
+        <Field id="A3" other-name="fA3" type="number">
+            <Value>1.334567890</Value>
+        </Field>
+        <Field id="B3" other-name="fB3" type="number">
+            <Value>3.345678901</Value>
+        </Field>
+        <Field id="C3" other-name="fC3" type="number">
+            <Value>3.456789013</Value>
+        </Field>
+        <Field id="A4" other-name="fA4" type="number">
+            <Value>1.444567890</Value>
+        </Field>
+        <Field id="B4" other-name="fB4" type="number">
+            <Value>4.445678901</Value>
+        </Field>
+        <Field id="C4" other-name="fC4" type="number">
+            <Value>4.456789014</Value>
+        </Field>
+
+    </MasterBlock>
+
+</Document>
