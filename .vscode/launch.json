@@ -11,12 +11,20 @@
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/DocumentBuilder/bin/Debug/net6.0/DocumentBuilder.dll",
-            "args": [],
+            "args": [
+                "${workspaceFolder}/data/template-simple.xlsx",
+                "${workspaceFolder}/data/data.xml",
+                "${workspaceFolder}/outout/simple.xlsx"
+            ],
+            "env": [
+                { "name" : "LOGDIR", "value" : "${workspaceFolder}" }
+            ],
             "cwd": "${workspaceFolder}",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
         },
+
         {
             "name": ".NET Core Attach",
             "type": "coreclr",

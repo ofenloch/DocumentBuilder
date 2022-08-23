@@ -31,7 +31,8 @@
             "comment": "should work with --environment ... (it does from the command line)",
             "args": [
                 "test",
-                "--environment LOGDIR=${workspaceFolder}",
+                "-e workspaceFolder=${workspaceFolder}",
+                "-e LOGDIR=${workspaceFolder}",
                 "--output=${workspaceFolder}/output/unit-tests",
                 "--results-directory=${workspaceFolder}/output/unit-tests-results"
             ],
