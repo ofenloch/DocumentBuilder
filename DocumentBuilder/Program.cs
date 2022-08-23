@@ -7,26 +7,42 @@ namespace DocumentBuilder
 {
     internal class Program
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("DocumentBuilder.NET");
 
-            string outDir = dblib.Utilities.CreateDirectory("./output/");
-            Console.WriteLine("output directory is {0}", outDir);
+            int nArgs = args.Length;
+            if (nArgs != 3)
+            {
+                Console.WriteLine("Usage:");
+                Console.WriteLine("      DocumentBuilder <template file> <data file> <output file>");
+                Console.WriteLine("examples");
+                Console.WriteLine("      DocumentBuilder template.xlsx data.xml generated-document.xlsx");
+                Console.WriteLine("      DocumentBuilder template.docx data.xml generated-document.docx");
+                return;
+            }
+            string templateFileName = Path.GetFullPath(args[0]);
+            string templateDirectory = Path.GetDirectoryName(templateFileName);
+            string dataFileName = Path.GetFullPath(args[1]);
+            string dataDirectory = Path.GetDirectoryName(dataFileName);
+            string outputFileName = Path.GetFullPath(args[1]);
+            string outputDirectory = Path.GetDirectoryName(outputFileName);
 
-            string dataDir = dblib.Utilities.CreateDirectory("./data/");
-            Console.WriteLine("data directory is {0}", dataDir);
+            outputDirectory = dblib.Utilities.CreateDirectory(outputDirectory);
+            Logger.Info("output directory is {0}", outputDirectory);
+            Logger.Info("data directory is {0}", dataDirectory);
 
-            string templateWord = Path.Combine(dataDir, "template.docx");
-            Console.WriteLine("Word template is {0}", templateWord);
-            string templateExcel = Path.Combine(dataDir, "template.xlsx");
-            Console.WriteLine("Excel template is {0}", templateExcel);
+            string templateWord = Path.Combine(dataDirectory, "template.docx");
+            Logger.Info("Word template is {0}", templateWord);
+            string templateExcel = Path.Combine(dataDirectory, "template.xlsx");
+            Logger.Info("Excel template is {0}", templateExcel);
 
-            string xmlDataFileName = Path.Combine(dataDir, "template.xml");
+            string xmlDataFileName = Path.Combine(dataDirectory, "template.xml");
 
 
-            string testDocx = Path.Combine(outDir, "test.docx");
-            string testXlsx = Path.Combine(outDir, "test.xlsx");
+            string testDocx = Path.Combine(outputDirectory, "test.docx");
+            string testXlsx = Path.Combine(outputDirectory, "test.xlsx");
 
             dblib.DocumentBuilder.CreateNewWordDocument(testDocx);
             dblib.DocumentBuilder.CreateNewExcelDocument(testXlsx);
@@ -34,8 +50,8 @@ namespace DocumentBuilder
             dblib.DocumentBuilder.UnpackPackage(testDocx, testDocx + "_unpacked");
             dblib.DocumentBuilder.UnpackPackage(testXlsx, testXlsx + "_unpacked");
 
-            dblib.DocumentBuilderXlsx dbExcel = new dblib.DocumentBuilderXlsx(templateExcel, xmlDataFileName, Path.Combine(outDir, "example.xlsx"));
-            dblib.DocumentBuilderDocx dbWord = new dblib.DocumentBuilderDocx(templateWord, xmlDataFileName, Path.Combine(outDir, "example.docx"));
+            dblib.DocumentBuilderXlsx dbExcel = new dblib.DocumentBuilderXlsx(templateExcel, xmlDataFileName, Path.Combine(outputDirectory, "example.xlsx"));
+            dblib.DocumentBuilderDocx dbWord = new dblib.DocumentBuilderDocx(templateWord, xmlDataFileName, Path.Combine(outputDirectory, "example.docx"));
 
         }
     } // internal class Program
