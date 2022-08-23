@@ -6,4 +6,6 @@ core
 *.docx
 *.log
 *.xlsx
+*.xml
+
 
